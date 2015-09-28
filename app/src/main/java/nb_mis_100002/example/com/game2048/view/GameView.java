@@ -108,8 +108,7 @@ public class GameView extends GridLayout implements OnTouchListener {
         if (mBlanks.size() > 0) {
             int randomNum = (int) (Math.random() * mBlanks.size());
             Point randomPoint = mBlanks.get(randomNum);
-            mGameMatrix[randomPoint.x][randomPoint.y]
-                    .setNum(Math.random() > 0.2d ? 2 : 4);
+            mGameMatrix[randomPoint.x][randomPoint.y].setNum(Math.random() > 0.2d ? 2 : 4);
             animCreate(mGameMatrix[randomPoint.x][randomPoint.y]);
         }
     }
@@ -189,8 +188,7 @@ public class GameView extends GridLayout implements OnTouchListener {
         setOnTouchListener(this);
         // 初始化View参数
         DisplayMetrics metrics = new DisplayMetrics();
-        WindowManager wm = (WindowManager) getContext().getSystemService(
-                Context.WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         display.getMetrics(metrics);
         Config.mItemSize = metrics.widthPixels / Config.mGameLines;
@@ -238,8 +236,7 @@ public class GameView extends GridLayout implements OnTouchListener {
 
     private int getDeviceDensity() {
         DisplayMetrics metrics = new DisplayMetrics();
-        WindowManager wm = (WindowManager) getContext().getSystemService(
-                Context.WINDOW_SERVICE);
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(metrics);
         return (int) metrics.density;
     }
@@ -276,8 +273,7 @@ public class GameView extends GridLayout implements OnTouchListener {
                 }
             }
         } else if (flagSuper) { // 启动超级用户权限来添加自定义数字
-            AlertDialog.Builder builder =
-                    new AlertDialog.Builder(getContext());
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             final EditText et = new EditText(getContext());
             builder.setTitle("Back Door")
                     .setView(et)
@@ -317,14 +313,12 @@ public class GameView extends GridLayout implements OnTouchListener {
             for (int i = 0; i < mGameLines; i++) {
                 for (int j = 0; j < mGameLines; j++) {
                     if (j < mGameLines - 1) {
-                        if (mGameMatrix[i][j].getNum() == mGameMatrix[i][j + 1]
-                                .getNum()) {
+                        if (mGameMatrix[i][j].getNum() == mGameMatrix[i][j + 1].getNum()) {
                             return 1;
                         }
                     }
                     if (i < mGameLines - 1) {
-                        if (mGameMatrix[i][j].getNum() == mGameMatrix[i + 1][j]
-                                .getNum()) {
+                        if (mGameMatrix[i][j].getNum() == mGameMatrix[i + 1][j].getNum()) {
                             return 1;
                         }
                     }

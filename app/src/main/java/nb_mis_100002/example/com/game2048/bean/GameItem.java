@@ -45,8 +45,7 @@ public class GameItem extends FrameLayout {
         TextPaint tp = mTvNum.getPaint();
         tp.setFakeBoldText(true);
         mTvNum.setGravity(Gravity.CENTER);
-        mParams = new LayoutParams(LayoutParams.MATCH_PARENT,
-                LayoutParams.MATCH_PARENT);
+        mParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         mParams.setMargins(5, 5, 5, 5);
         addView(mTvNum, mParams);
     }
